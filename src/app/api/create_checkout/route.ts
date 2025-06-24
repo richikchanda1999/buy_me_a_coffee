@@ -7,6 +7,11 @@ export async function POST(request: NextRequest) {
   const { id, address, email, name, ...body } = await request.json();
   console.log(id);
 
+  // Get the host from the request headers
+  const host = request.headers.get('host');
+  const protocol = request.headers.get('x-forwarded-proto') || 'http';
+  const baseUrl = `${protocol}://${host}`;
+
   // 1. Retrieve the customer - create if absent
   let customer;
   try {
@@ -29,7 +34,8 @@ export async function POST(request: NextRequest) {
 
   const checkoutResponse = await stripe.checkout.sessions.create({
     mode: "payment",
-    success_url: "http://localhost:3000/success",
+    success_url: `${baseUrl}/success`,
+    cancel_url: `${baseUrl}`, // Also added a cancel URL that goes back to the form
     client_reference_id: id,
     metadata: {
       ...body,

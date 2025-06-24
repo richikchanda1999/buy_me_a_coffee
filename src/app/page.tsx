@@ -13,9 +13,6 @@ export default function Home() {
         <h2>Support Alex with Coffee</h2>
       </div>
 
-      {/* <div className="flex w-9/10 md:w-2/5">
-        
-      </div> */}
       <UserForm />
     </div>
   );
