@@ -1,8 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Buy Me a Coffee
 
-## Getting Started
+> A Buy Me a Coffee clone built with Next.js, Stripe & Tailwind CSS.
 
-First, run the development server:
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Development](#development)
+- [Environment Variables](#environment-variables)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Deployment](#deployment)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+
+## Prerequisites
+
+- Node.js v18 or higher
+- npm, yarn, pnpm, or bun
+- Stripe account (for processing payments)
+
+## Installation
+
+Clone the repo and install dependencies:
+
+```bash
+git clone https://github.com/<your-username>/buy_me_coffee.git
+cd buy_me_coffee
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+## Development
+
+Start the development server:
 
 ```bash
 npm run dev
@@ -14,23 +52,63 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env` file in the project root with the following content:
 
-## Learn More
+```bash
+STRIPE_SECRET_KEY=<your_stripe_secret_key>
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Visit the homepage, fill out the `Buy me a coffee` form, enter your donation amount and payment details, then submit.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Screenshots
 
-## Deploy on Vercel
+Place your screenshots in `public/screenshots`. For example:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Home Page](public/screenshots/home.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Features
+
+- Accept one-time payments and recurring tips via Stripe Checkout
+- Form validation with React Hook Form & Zod
+- Fingerprint detection with FingerprintJS
+- Responsive UI built with Tailwind CSS & Radix UI
+- Dark mode support
+- Optimized fonts with next/font
+
+## Tech Stack
+
+- Next.js 15
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Stripe API
+- Radix UI (Avatar, Label, Slot)
+- Zod & React Hook Form
+- FingerprintJS
+
+## Deployment
+
+Deploy on Vercel:
+
+```bash
+vercel --prod
+```
+
+See [Next.js Deployment Docs](https://nextjs.org/docs/app/building-your-application/deploying).
+
+## Roadmap
+
+- [ ] User authentication
+- [ ] Creator dashboard & analytics
+- [ ] Customizable button styles
+- [ ] Internationalization
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
